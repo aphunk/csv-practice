@@ -1,14 +1,18 @@
 # csv_practice.rb
-require 'csv'
-require 'awesome_print'
+require "csv"
+require "awesome_print"
 
 # Part 1 - CSV Practice
 def load_data(filename)
-
+  athlete_array = []
+  CSV.read(filename, headers: true).each do |athlete|
+    athlete_array << athlete.to_h
+  end
+  return athlete_array
 end
 
 def total_medals_per_country(olympic_data)
-
+  
 end
 
 def save_medal_totals(filename, medal_totals)
